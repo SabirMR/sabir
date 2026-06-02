@@ -1,0 +1,16 @@
+.root {
+    -fx-main-bg-color: #FFF;
+    -fx-additional-bg-color: #04AA6D;
+    -fx-akcent-bg-color: #04AA6D;
+}
+.button {
+    -fx-background-color: -fx-additional-bg-color;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+.table-view {
+    -fx-border-color: #ddd;
+}
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}

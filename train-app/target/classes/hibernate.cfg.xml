@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/trainapp</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">KFtNAGw1</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Mapping classes -->
+        <mapping class="com.example.trainapp.model.LocomotiveSeries"/>
+        <mapping class="com.example.trainapp.model.Locomotive"/>
+        <mapping class="com.example.trainapp.model.Route"/>
+        <mapping class="com.example.trainapp.model.Trip"/>
+    </session-factory>
+</hibernate-configuration>

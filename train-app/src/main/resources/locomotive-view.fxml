@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.trainapp.controller.locomotive.LocomotiveController">
+    <SplitPane dividerPositions="0.3" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Локомотивы" onAction="#btnLocomotives"/>
+                        <Button text="Серии" onAction="#btnSeries"/>
+                        <Button text="Маршруты" onAction="#btnRoutes"/>
+                        <Button text="Рейсы" onAction="#btnTrips"/>
+                        <Button text="Выход" onAction="#btnOff"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Добавить" onAction="#btnAddLocomotive"/>
+                        <Button text="Изменить" onAction="#btnEditLocomotive"/>
+                        <Button text="Удалить" onAction="#btnDeleteLocomotive"/>
+                        <Button text="Обновить" onAction="#btnUpdateLocomotives"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane>
+                <TableView fx:id="locomotivesTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="numberColumn" text="Номер машины"/>
+                        <TableColumn fx:id="seriesColumn" text="Серия"/>
+                        <TableColumn fx:id="statusColumn" text="Статус"/>
+                        <TableColumn fx:id="repairDateColumn" text="Дата ремонта"/>
+                        <TableColumn fx:id="mileageColumn" text="Пробег (км)"/>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.trainapp.controller.route.AddEditRouteDialog">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+    <children>
+        <Label text="Номер маршрута:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="routeNumberField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Начальная станция:" GridPane.rowIndex="1"/>
+        <TextField fx:id="startStationField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Конечная станция:" GridPane.rowIndex="2"/>
+        <TextField fx:id="endStationField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Диспетчер:" GridPane.rowIndex="3"/>
+        <TextField fx:id="dispatcherField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Button fx:id="okButton" text="OK" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <Label fx:id="errorLabel" textFill="red" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+</GridPane>

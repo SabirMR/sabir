@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.trainapp.controller.route.RouteController">
+    <SplitPane dividerPositions="0.3" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Локомотивы" onAction="#btnLocomotives"/>
+                        <Button text="Серии" onAction="#btnSeries"/>
+                        <Button text="Маршруты" onAction="#btnRoutes"/>
+                        <Button text="Рейсы" onAction="#btnTrips"/>
+                        <Button text="Выход" onAction="#btnOff"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Добавить" onAction="#btnAddRoute"/>
+                        <Button text="Изменить" onAction="#btnEditRoute"/>
+                        <Button text="Удалить" onAction="#btnDeleteRoute"/>
+                        <Button text="Обновить" onAction="#btnUpdateRoutes"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane>
+                <TableView fx:id="routesTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="routeNumberColumn" text="Номер маршрута"/>
+                        <TableColumn fx:id="startStationColumn" text="Начальная станция"/>
+                        <TableColumn fx:id="endStationColumn" text="Конечная станция"/>
+                        <TableColumn fx:id="dispatcherColumn" text="Диспетчер"/>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>

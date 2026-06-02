@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.trainapp.controller.series.SeriesController">
+    <SplitPane dividerPositions="0.3" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Локомотивы" onAction="#btnLocomotives"/>
+                        <Button text="Серии" onAction="#btnSeries"/>
+                        <Button text="Маршруты" onAction="#btnRoutes"/>
+                        <Button text="Рейсы" onAction="#btnTrips"/>
+                        <Button text="Выход" onAction="#btnOff"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Добавить" onAction="#btnAddSeries"/>
+                        <Button text="Изменить" onAction="#btnEditSeries"/>
+                        <Button text="Удалить" onAction="#btnDeleteSeries"/>
+                        <Button text="Обновить" onAction="#btnUpdateSeries"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane>
+                <TableView fx:id="seriesTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Наименование"/>
+                        <TableColumn fx:id="tractionTypeColumn" text="Тип тяги"/>
+                        <TableColumn fx:id="powerKwColumn" text="Мощность (кВт)"/>
+                        <TableColumn fx:id="maxSpeedColumn" text="Макс. скорость (км/ч)"/>
+                        <TableColumn fx:id="yearColumn" text="Год выпуска серии"/>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>

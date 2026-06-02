@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.trainapp.controller.trip.AddEditTripDialog">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+    <children>
+        <Label text="Локомотив:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="locomotiveCombo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Маршрут:" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="routeCombo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Время отправления:" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="departureDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Время прибытия:" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="arrivalDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="Расход топлива:" GridPane.rowIndex="4"/>
+        <TextField fx:id="fuelField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <Label text="Машинист:" GridPane.rowIndex="5"/>
+        <TextField fx:id="driverField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <Button fx:id="okButton" text="OK" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Label fx:id="errorLabel" textFill="red" GridPane.columnSpan="2" GridPane.rowIndex="7"/>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+</GridPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="675.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.trainapp.controller.trip.TripController">
+    <SplitPane dividerPositions="0.3" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Локомотивы" onAction="#btnLocomotives"/>
+                        <Button text="Серии" onAction="#btnSeries"/>
+                        <Button text="Маршруты" onAction="#btnRoutes"/>
+                        <Button text="Рейсы" onAction="#btnTrips"/>
+                        <Button text="Выход" onAction="#btnOff"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button text="Добавить" onAction="#btnAddTrip"/>
+                        <Button text="Изменить" onAction="#btnEditTrip"/>
+                        <Button text="Удалить" onAction="#btnDeleteTrip"/>
+                        <Button text="Обновить" onAction="#btnUpdateTrips"/>
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+            <AnchorPane>
+                <TableView fx:id="tripsTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="locomotiveColumn" text="Локомотив"/>
+                        <TableColumn fx:id="routeColumn" text="Маршрут"/>
+                        <TableColumn fx:id="departureColumn" text="Время отправления"/>
+                        <TableColumn fx:id="arrivalColumn" text="Время прибытия"/>
+                        <TableColumn fx:id="fuelColumn" text="Расход топлива"/>
+                        <TableColumn fx:id="driverColumn" text="Машинист"/>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>
