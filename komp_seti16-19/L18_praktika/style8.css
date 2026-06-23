@@ -1,0 +1,21 @@
+table {
+border-collapse: collapse;
+border: 1px solid black;
+width: auto;
+}
+td {
+border: 1px solid black;
+text-align: center;
+padding: 8px;
+}
+table tr:first-child td {
+padding-top: 20px;
+text-align: center;
+font-weight: bold;
+background-color: yellow;
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+}

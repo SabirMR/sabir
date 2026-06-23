@@ -1,0 +1,15 @@
+table {
+border-collapse: collapse;
+width: 0px auto;
+height: 0px auto;
+background-color: darkblue;
+}
+td, tr {
+border: 2px solid maroon;
+padding: 8px;
+color: white;
+font-weight: bold;
+}
+table tr:first-child {
+background-color: maroon;
+}

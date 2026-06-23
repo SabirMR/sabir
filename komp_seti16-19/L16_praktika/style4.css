@@ -1,0 +1,16 @@
+.qwe {
+text-decoration: underline;
+}
+.qwer {
+text-decoration: overline;
+}
+.qwert {
+text-decoration: line-through;
+}
+.qwerty {
+text-decoration: underline line-through;
+}
+.href {
+color: blue;
+text-decoration: none;
+}

@@ -1,0 +1,16 @@
+table {
+border-collapse: separate;
+border: 4px double black;
+border-spacing: 10px;
+width: 500px;
+height: 80px;
+}
+td, tr {
+border: 1px solid maroon;
+padding: 5px;
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+}

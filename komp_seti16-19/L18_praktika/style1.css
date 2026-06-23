@@ -1,0 +1,26 @@
+table {
+border-collapse: collapse;
+width: 500px;
+height: 150px;
+}
+td {
+border: 1px solid black;
+padding 10px;
+text-align: center;
+}
+table tr:first-child {
+background-color: #FF0000;
+color: white;
+font-weight: bold;
+}
+.td_first {
+text-align: left;
+background-color: #009999;
+font-weight: bold;
+color: white;
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+}
