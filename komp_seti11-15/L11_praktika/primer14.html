@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>block the field</title>
+    <script>
+        function agreeForm(f){
+        if (f.agree.checked) f.submit.disabled = 0
+        else f.submit.disabled = 1
+        }
+    </script>
+</head>
+<body>
+<form>
+    <p><textarea cols="30" rows="4" disabled>
+        standard contract
+        I give my soul and in return I receive health and immortality
+    </textarea></p>
+    <p><input type="checkbox" name="agree" onclick="agreeForm(this.form)">
+        I agree with all the terms and conditions</p>
+    <input type="submit" name="submit" value="next" disabled>
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Селекторы в CSS3</title>
+    <style>
+        p {font-size:150%;}
+        q:lang(de) {
+        quotes: "\201E" "\201C";
+        }
+        q:lang(en) {
+        quotes: "\201C" "\201D";
+        }
+        q:lang(fr), q:lang(ru) {
+        quotes: "\00AB" "\00RB";
+        }
+    </style>
+</head>
+<body>
+<p>Цитата на французском языке: <q lang="fr">Ce que femme veut, Dieu le veut</q></p>
+<p>Цитата на немецком языке: <q lang="de">Der Mensch, versuche die Gotter nicht</q></p>
+<p>Цитата на английском языке: <q lang="en">To be or not to be</q></p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>slider</title>
+    <script>
+        function sizePic(){
+        size = document.getElementById("size").value;
+        img = document.getElementById("pic");
+        img.width = 60 + 80*size;
+        }
+    </script>
+</head>
+<body>
+<form>
+    <p>image size: <input type="range" min="1" max="5" id="size" oninput="sizePic()" value="3"></p>
+    <p><img src="images.jpg" alt="" id="pic" width="300"></p>
+</form>
+</body>
+</html>
