@@ -1,47 +1,41 @@
-import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.Math.sqrt;
-
 public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
-    static int s(int osn, int step) {
-        int result = 1;
-        for (int i = 1; i <= step; i++) {
-            result *= osn;
+        System.out.print("x = ");
+        double x = in.nextDouble(); 
+        System.out.print("y = ");
+        int y = in.nextInt();       
+        System.out.print("a = ");
+        double a = in.nextDouble(); 
+        System.out.print("n = ");
+        int n = in.nextInt();
+        System.out.print("m = ");
+        int m = in.nextInt();
+
+        double part1 = x + pow(a, n);   
+        double part2 = fact(y) / pow(a, m); 
+        
+        double F = part1 + part2;
+
+        System.out.printf("F = %.6f%n", F);
+    }
+
+    static double pow(double base, int exp) {
+        double result = 1.0;
+        for (int i = 0; i < exp; i++) {
+            result *= base;
         }
         return result;
     }
 
-    static int f(int fact) {
-        int value = 1;
-        for (int i = 1; i <= fact; i++) {
-            value *= i;
+    static double fact(int num) {
+        double result = 1.0;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
         }
-        return value;
-    }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int c = in.nextInt();
-        int x = in.nextInt();
-        int y = in.nextInt();
-        int m = in.nextInt();
-        int n = in.nextInt();
-        System.out.println("A = " + a + "\nC = " + c + "\nX = " + x + "\nY = " + y + "\nM = " + m + "\nN = " + n);
-
-        double F = x + (double) y / (s(a, m) + s(c, n)) + f(n);
-
-        System.out.printf("%.2f", F);
+        return result;
     }
 }
-
-//A = 1
-//C = 2
-//X = 3
-//Y = 4
-//M = 5
-//N = 6
-//723,06
-
