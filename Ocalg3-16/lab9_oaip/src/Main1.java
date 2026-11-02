@@ -1,60 +1,52 @@
-import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.Math.sqrt;
-
-public class Main1 {
-
-    static class Steps {
-        int value;
+public class Main {
+    
+    static class ResultHolder {
+        double value;
     }
 
-    static class Factorial {
-        int value;
-    }
-
-    static int s(int osn, int step, Steps s) {
-        s.value = 1;
-        for (int i = 1; i <= step; i++) {
-            s.value *= osn;
+    static void calcPow(double base, int exp, ResultHolder holder) {
+        holder.value = 1.0;
+        for (int i = 0; i < exp; i++) {
+            holder.value *= base;
         }
-        return s.value;
     }
 
-    static int f(int fact, Factorial factorial) {
-        factorial.value = 1;
-        for (int i = 1; i <= fact; i++) {
-            factorial.value *= i;
+    static void calcFact(int num, ResultHolder holder) {
+        holder.value = 1.0;
+        for (int i = 1; i <= num; i++) {
+            holder.value *= i;
         }
-        return factorial.value;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int c = in.nextInt();
-        int x = in.nextInt();
+
+        System.out.print("x = ");
+        double x = in.nextDouble();
+        System.out.print("y = ");
         int y = in.nextInt();
-        int m = in.nextInt();
+        System.out.print("a = ");
+        double a = in.nextDouble();
+        System.out.print("n = ");
         int n = in.nextInt();
-        System.out.println("A = " + a + "\nC = " + c + "\nX = " + x + "\nY = " + y + "\nM = " + m + "\nN = " + n);
+        System.out.print("m = ");
+        int m = in.nextInt();
 
-        Factorial f = new Factorial();
-        Steps s = new Steps();
+        ResultHolder h1 = new ResultHolder();
+        ResultHolder h2 = new ResultHolder();
+        ResultHolder h3 = new ResultHolder();
 
-        int s1 = s(a, m, s);
-        int s2 = s(c, n, s);
-        int f1 = f(n, f);
+        calcPow(a, n, h1);
+        
+        calcPow(a, m, h2);
+        
+        calcFact(y, h3);
 
-        double F = x + (double) y / (s1 + s2) + f1;
+        double F = (x + h1.value) + (h3.value / h2.value);
 
-        System.out.printf("%.2f", F);
+        System.out.printf("F = %.6f%n", F);
     }
 }
-//A = 1
-//C = 2
-//X = 3
-//Y = 4
-//M = 5
-//N = 6
-//723,06
+
