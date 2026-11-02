@@ -3,79 +3,57 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Random r = new Random();
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Задайте количество элементов x-массива n = ");
+        System.out.print("Введите число элементов массива n = ");
         int n = in.nextInt();
-        float[] x = InputMassiv(n);
-        Output(x, "x");
 
-        float sumX = SummaMassiv(x);
-        System.out.println("сумма элементов=" + sumX);
+        int[] t = new int[n]; 
 
-        System.out.print("Задайте количество элементов y-массива m = ");
-        int m = in.nextInt();
-        float[] y = InputMassiv(m);
-        Output(y, "y");
-
-        float sumY = SummaMassiv(y);
-        System.out.println("сумма элементов=" + sumY);
-
-        float totalSumXY = sumX + sumY;
-        System.out.println("Сумма массивов=" + totalSumXY);
-
-        System.out.print("a = ");
-        float a = in.nextFloat();
-
-        float an = Step(a, n);
-        float am = Step(a, m);
-
-        float part1 = sumX + (n * an);
-
-        float part2 = 0;
-        for (int k = 0; k < m; k++) {
-            float ykPower = Step(y[k], k + 1);
-            part2 += ykPower / am;
+        for (int i = 0; i < n; i++) {
+            t[i] = r.nextInt(16) - 5; 
         }
 
-        float F = part1 + part2;
+        System.out.println("Вывод элементов массива t:");
+        for (int i = 0; i < n; i++) {
+            System.out.println("t[" + (i + 1) + "] = " + t[i]);
+        }
 
-        System.out.println("Итого F = " + F);
+        System.out.print("Номера элементов массива t, равных 0: ");
+        int countZero = 0;
+        for (int i = 0; i < n; i++) {
+            if (t[i] == 0) {
+                countZero++;
+                System.out.print((i + 1) + " ");
+            }
+        }
+        System.out.println(); 
+        System.out.println("Количество элементов массива t, равных 0: " + countZero);
 
+        int[] x = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            x[i] = 12 * t[i] - 4;
+        }
+
+        System.out.println("\nВывод элементов массива x (xi = 12*ti - 4):");
+        for (int i = 0; i < n; i++) {
+            System.out.println("x[" + (i + 1) + "] = " + x[i]);
+        }
+
+        int maxOddPos = x[0]; 
+        
+        for (int i = 2; i < n; i = i + 2) { 
+            if (x[i] > maxOddPos) {
+                maxOddPos = x[i];
+            }
+        }
+
+        System.out.println("\nМаксимальный элемент массива x на нечетных позициях: " + maxOddPos);
+        
         in.close();
     }
-
-    static float[] InputMassiv(int length) {
-        float[] mas = new float[length];
-        Random r = new Random();
-        for (int i = 0; i < length; i++) {
-            mas[i] = (float) (r.nextFloat() * 10);
-        }
-        return mas;
-    }
-
-    static void Output(float[] mas, String str) {
-        System.out.println("Вывод массива " + str + ":");
-        for (int i = 0; i < mas.length; i++) {
-            System.out.println(str + "[" + i + "] = " + mas[i]);
-        }
-    }
-
-    static float SummaMassiv(float[] mas) {
-        float Sum = 0;
-        for (float value : mas) {
-            Sum += value;
-        }
-        return Sum;
-    }
-
-    static float Step(float osn, int nn) {
-        if (nn == 0) return 1;
-        float st = 1;
-        for (int i = 1; i <= nn; i++) {
-            st *= osn;
-        }
-        return st;
-    }
 }
+
 
