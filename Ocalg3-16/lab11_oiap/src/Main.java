@@ -5,51 +5,52 @@ public class Main {
     public static void main(String[] args) {
         Random r = new Random();
         Scanner in = new Scanner(System.in);
+
         System.out.print("Введите число элементов массива n = ");
         int n = in.nextInt();
-        int[] z = new int[n];
 
+        int[] t = new int[n];
         for (int i = 0; i < n; i++) {
-            z[i] = r.nextInt(1, 16);
+            t[i] = r.nextInt(16) - 5;
+        }
+        System.out.println("Вывод элементов массива t:");
+        for (int i = 0; i < n; i++) {
+            System.out.println("t[" + (i + 1) + "] = " + t[i]);
         }
 
-        System.out.println("Вывод элементов массива z");
+        System.out.print("Номера элементов массива t, равных 0: ");
+        int countZero = 0;
         for (int i = 0; i < n; i++) {
-            System.out.println("z[" + (i + 1) + "] =" + z[i]);
-        }
-
-        int qua = 0;
-        for (int i = 0; i < n; i++) {
-            if (z[i] != 8) {
-                qua++;
+            if (t[i] == 0) {
+                countZero++;
+                System.out.print((i + 1) + " ");
             }
         }
-        System.out.print("Количество элементов массива, не равных 8: " + qua);
-
-        int[] q = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            if (z[i] == 3) {
-                q[i] = 0;
-            } else if (z[i] != 3) {
-                q[i] = 2 * z[i];
-            }
-        }
-
         System.out.println();
+        System.out.println("Количество элементов массива t, равных 0: " + countZero);
 
-        System.out.println("Вывод элементов массива q");
+        int[] x = new int[n];
+
         for (int i = 0; i < n; i++) {
-            System.out.println("q[" + (i + 1) + "] =" + q[i]);
+            x[i] = 12 * t[i] - 4;
         }
 
-        int temp = 1;
-        for (int i = 0; i < n; i = i + 2) {
-            if (q[i] != 0) {
-                temp *= q[i];
+        System.out.println("\nВывод элементов массива x (xi = 12*ti - 4):");
+        for (int i = 0; i < n; i++) {
+            System.out.println("x[" + (i + 1) + "] = " + x[i]);
+        }
+
+        int maxOddPos = x[0];
+
+        for (int i = 2; i < n; i = i + 2) {
+            if (x[i] > maxOddPos) {
+                maxOddPos = x[i];
             }
         }
 
-        System.out.println("Произведение ненулевых элементов массива, расположенных на нечетных позициях: " + temp);
+        System.out.println("\nМаксимальный элемент массива x на нечетных позициях: " + maxOddPos);
+
+        in.close();
     }
 }
+
