@@ -2,19 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int k = in.nextInt();
-        int sum = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print(" n = ");
+        int n = scanner.nextInt();
+
+        System.out.print(" m = ");
+        int k = scanner.nextInt();
+
+        long totalSum = 0;
+
         for (int i = 1; i <= n; i++) {
-            int result = 1;
-            for (int j = 1; j <= k; j++) {
-                result *= i;
-            }
-            System.out.printf("%d = %d\n", i, result);
-            System.out.println();
-            sum += result;
+            totalSum += (long) i * k;
         }
-        System.out.println(sum);
+
+        System.out.println("сумма " + totalSum);
+
+        scanner.close();
     }
 }
