@@ -21,10 +21,12 @@ public class Main {
 
         } while (A >= E);
 
-        System.out.printf("Сумма членов ряда S = %.4f, число итераций N = %d%n", S, N);
+        System.out.printf("Сумма членов ряда S = %.4f", S);
+        System.out.println();
+        System.out.printf("число итераций N = %d%n", N);
     }
 
-   
+
     private static long factorial(int n) {
         long result = 1;
         for (int i = 2; i <= n; i++) {
