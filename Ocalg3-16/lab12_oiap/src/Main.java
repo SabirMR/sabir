@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Задайте количество элементов x-массива n = ");
+        System.out.println("Задайте количество элементов x-массива:");
+        System.out.print("n = ");
         int n = in.nextInt();
         float[] x = InputMassiv(n);
         Output(x, "x");
@@ -13,7 +14,8 @@ public class Main {
         float sumX = SummaMassiv(x);
         System.out.println("сумма элементов=" + sumX);
 
-        System.out.print("Задайте количество элементов y-массива m = ");
+        System.out.println("Задайте количество элементов y-массива");
+        System.out.print("m = ");
         int m = in.nextInt();
         float[] y = InputMassiv(m);
         Output(y, "y");
