@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("ПОКА с увеличением параметра цикла k");
+        System.out.println("'ПОКА' с увеличением параметра цикла k");
         task1();
-        System.out.println("ПОКА с уменьшением параметра цикла k");
+        System.out.println("'ПОКА' с уменьшением параметра цикла k");
         task2();
-        System.out.println("ДО с увеличением параметра цикла k");
+        System.out.println("'ДО' с увеличением параметра цикла k");
         task3();
-        System.out.println("ДО с уменьшением параметра цикла k");
+        System.out.println("'ДО' с уменьшением параметра цикла k");
         task4();
     }
 
