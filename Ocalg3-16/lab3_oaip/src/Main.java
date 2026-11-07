@@ -34,7 +34,7 @@ public class Main {
             s = "в области М4";
             i = 4;
         }
-        else if x >= -2 && x <= 0 && y >= -2 && y <= -1 && pow(x, 2) + pow(y + 1, 2) > 1 {
+        else if (x >= -2 && x <= 0 && y >= -2 && y <= -1 && pow(x, 2) + pow(y + 1, 2) > 1) {
             s = "в области М5";
             i = 5;
         }
@@ -46,22 +46,26 @@ public class Main {
 
         switch (i) {
             case 1:
-                pl = PI / 4.0;
+                // M1: 1 - π/6 - √3/4 + четверть круга (0,1)
+                pl = 1.0 - (Math.PI / 6.0) - (Math.sqrt(3) / 4.0) + (Math.PI / 4.0);
                 break;
             case 2:
-                pl = 1.0 - (PI / 4.0);
+                // M2: Квадрат 1x1 минус четверть круга
+                pl = 1.0 - (Math.PI / 4.0);
                 break;
             case 3:
- pl = (2.0 * PI / 3.0) - (sqrt(3) / 2.0) - (PI / 2.0 - 1.0);
+                // M3: Пересечение кругов (-1,0) и (0,0) минус круг (1,0)
+                pl = (2.0 * Math.PI / 3.0) - (Math.sqrt(3) / 2.0);
                 break;
             case 4:
-    pl = (PI / 2.0) - 1.0;
+                // M4: Пересечение кругов (1,0) и (0,-1)
+                pl = (Math.PI / 2.0) - 1.0;
                 break;
-          case 5:
-    pl = 2.0 - (Math.PI / 4.0);
-    break;
+            case 5:
+                // M5: Прямоугольник 2x1 минус четверть круга
+                pl = 2.0 - (Math.PI / 4.0);
+                break;
         }
-
         if (i != 0) {
             System.out.printf("Площадь М%d: %.3f%n", i, pl);
         }
