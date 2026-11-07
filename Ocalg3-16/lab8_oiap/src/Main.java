@@ -1,28 +1,18 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        double sum = 0.0;
 
-        System.out.print(" n = ");
-        int n = in.nextInt();
-
-        System.out.print(" k = ");
-        int k = in.nextInt();
-
-        double totalSum = 0.0;
-
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= 2; i++) {
             double product = 1.0;
-
-            for (int p = 1; p <= k; p++) {
+            
+            for (int p = 1; p <= 3; p++) {
                 double term = Math.log(Math.pow(p, 3) + i);
                 product *= term;
             }
 
-            totalSum += product;
+            sum += product;
         }
 
-        System.out.printf("сумма = %.6f%n", totalSum);
+        System.out.printf("Результат вычисления: %.4f%n", sum);
     }
 }
