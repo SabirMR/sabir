@@ -3,29 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         final double E = 0.001;
-        double S = 0;
-        int N = 0;
-
+        double S = 0;        
+        int n = 0;           
         Scanner in = new Scanner(System.in);
         System.out.print("x = ");
         double x = in.nextDouble();
-
-        double A = (x * 5) / factorial(6);
+        double A = x / factorial(5);
 
         do {
             S += A;
-            N++;
-            System.out.printf("A%d = %.4f, сумма = %.4f%n", N, A, S);
+            n++;
+            System.out.printf("A%d = %.4f, сумма = %.4f%n", n - 1, A, S);
+            
+            A = A * 5.0 / (n + 5);
+        } while (Math.abs(A) >= E);
 
-            A = A * 5.0 / (N + 6);
-
-        } while (A >= E);
-
-        System.out.printf("Сумма членов ряда S = %.4f", S);
-        System.out.println();
-        System.out.printf("число итераций N = %d%n", N);
+        System.out.printf("Сумма членов ряда S = %.4f%n", S);
+        System.out.printf("Число итераций (вычисленных членов) = %d%n", n);
     }
-
 
     private static long factorial(int n) {
         long result = 1;
