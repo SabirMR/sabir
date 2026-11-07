@@ -12,6 +12,6 @@ public class Main {
             P += (double)(3 * k) / ((double)((4 * k - 1) * (5 * k - 1)));
         }
 
-        System.out.printf("При N = %d P = %.6f%n", N, P);
+        System.out.printf("При N = %d, P = %.6f%n", N, P);
     }
 }
