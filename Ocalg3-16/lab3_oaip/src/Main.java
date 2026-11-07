@@ -52,10 +52,10 @@ public class Main {
                 pl = 1.0 - (PI / 4.0);
                 break;
             case 3:
-                pl = (PI / 2.0) - 1.0;
+ pl = (2.0 * PI / 3.0) - (sqrt(3) / 2.0) - (PI / 2.0 - 1.0);
                 break;
             case 4:
-                pl = (PI / 2.0) - 1.0;
+    pl = (PI / 2.0) - 1.0;
                 break;
           case 5:
     pl = 2.0 - (Math.PI / 4.0);
