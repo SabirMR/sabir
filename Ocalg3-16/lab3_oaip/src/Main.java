@@ -57,9 +57,9 @@ public class Main {
             case 4:
                 pl = (PI / 2.0) - 1.0;
                 break;
-            case 5:
-                pl = 1.0;
-                break;
+          case 5:
+    pl = 2.0 - (Math.PI / 4.0);
+    break;
         }
 
         if (i != 0) {
