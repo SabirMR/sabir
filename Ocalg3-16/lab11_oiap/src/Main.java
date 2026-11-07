@@ -7,7 +7,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Введите число элементов массива:");
-                System.out.print( "n = ");
+        System.out.print( "n = ");
         int n = in.nextInt();
         int[] t = new int[n];
 
@@ -49,4 +49,6 @@ public class Main {
         in.close();
     }
 }
+
+
 
