@@ -9,7 +9,6 @@ public class Main {
         System.out.println("Введите число элементов массива:");
                 System.out.print( "n = ");
         int n = in.nextInt();
-
         int[] t = new int[n];
 
         for (int i = 0; i < n; i++) {
@@ -31,9 +30,7 @@ public class Main {
         }
         System.out.println();
         System.out.println("Количество элементов массива t, равных 0: " + countZero);
-
         int[] x = new int[n];
-
         for (int i = 0; i < n; i++) {
             x[i] = 12 * t[i] - 4;
         }
@@ -42,17 +39,13 @@ public class Main {
         for (int i = 0; i < n; i++) {
             System.out.println("x[" + (i + 1) + "] = " + x[i]);
         }
-
         int maxOddPos = x[0];
-
         for (int i = 2; i < n; i = i + 2) {
             if (x[i] > maxOddPos) {
                 maxOddPos = x[i];
             }
         }
-
         System.out.println("\nМаксимальный элемент массива x на нечетных позициях: " + maxOddPos);
-
         in.close();
     }
 }
