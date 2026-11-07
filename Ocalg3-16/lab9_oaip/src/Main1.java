@@ -5,8 +5,6 @@ public class Main {
         double value;
     }
 
-    // Процедура: возводит a в степень n,
-    // результат возвращается через параметр p
     static void F(double a, int n, Power p) {
         p.value = 1;
         for (int i = 1; i <= n; i++) {
