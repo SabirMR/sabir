@@ -4,27 +4,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        Random r = new Random();
 
-        System.out.println("Задайте количество элементов x-массива:");
-        System.out.print("n = ");
+        System.out.print("Задайте количество элементов x-массива n = ");
         int n = in.nextInt();
-        float[] x = InputMassiv(n);
+        float x[] = InputMassiv(n);
         Output(x, "x");
+        float SumX = SummaMassiv(x);
+        System.out.println("сумма элементов=" + SumX);
 
-        float sumX = SummaMassiv(x);
-        System.out.println("сумма элементов=" + sumX);
-
-        System.out.println("Задайте количество элементов y-массива");
-        System.out.print("m = ");
+        System.out.print("Задайте количество элементов y-массива m = ");
         int m = in.nextInt();
-        float[] y = InputMassiv(m);
+        float y[] = InputMassiv(m);
         Output(y, "y");
-
-        float sumY = SummaMassiv(y);
-        System.out.println("сумма элементов=" + sumY);
-
-        float totalSumXY = sumX + sumY;
-        System.out.println("Сумма массивов=" + totalSumXY);
+        float SumY = SummaMassiv(y);
+        System.out.println("сумма элементов=" + SumY);
+        float CH = SumX + SumY;
+        System.out.println("Сумма массивов=" + CH);
 
         System.out.print("a = ");
         float a = in.nextFloat();
@@ -32,50 +28,40 @@ public class Main {
         float an = Step(a, n);
         float am = Step(a, m);
 
-        float part1 = sumX + (n * an);
+        float S1 = SumX + n * an;
+        float S2 = SumY / am;
 
-        float part2 = 0;
-        for (int k = 0; k < m; k++) {
-            float ykPower = Step(y[k], k + 1);
-            part2 += ykPower / am;
-        }
-
-        float F = part1 + part2;
-
-        System.out.println("Итого F = " + F);
-
-        in.close();
+        float F = S1 + S2;
+        System.out.println("F = " + F);
     }
 
-    static float[] InputMassiv(int length) {
-        float[] mas = new float[length];
+    static float[] InputMassiv(int LengthMassiv) {
         Random r = new Random();
-        for (int i = 0; i < length; i++) {
-            mas[i] = (float) (r.nextFloat() * 10);
+        float mas[] = new float[LengthMassiv];
+        for (int i = 0; i < LengthMassiv; i++) {
+            mas[i] = r.nextFloat();
         }
         return mas;
     }
 
     static void Output(float[] mas, String str) {
-        System.out.println("Вывод массива " + str + ":");
         for (int i = 0; i < mas.length; i++) {
-            System.out.println(str + "[" + i + "] = " + mas[i]);
+            System.out.println(str + "[" + (i + 1) + "]=" + mas[i]);
         }
     }
 
     static float SummaMassiv(float[] mas) {
         float Sum = 0;
-        for (float value : mas) {
-            Sum += value;
+        for (int i = 0; i < mas.length; i++) {
+            Sum = Sum + mas[i];
         }
         return Sum;
     }
 
     static float Step(float osn, int nn) {
-        if (nn == 0) return 1;
         float st = 1;
         for (int i = 1; i <= nn; i++) {
-            st *= osn;
+            st = st * osn;
         }
         return st;
     }
